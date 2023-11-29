@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">IdealTypeWorldCupApp</string>
     <string name="title">음식 이상형 월드컵</string>
+    <string name="round">%d/%d</string>
 </resources>
