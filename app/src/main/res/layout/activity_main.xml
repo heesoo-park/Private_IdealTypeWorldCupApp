@@ -13,7 +13,7 @@
         android:id="@+id/mainTitle_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="음식 이상형 월드컵"
+        android:text="@string/title"
         android:textSize="48sp"
         android:textStyle="bold"
         android:textColor="#005E88"/>
