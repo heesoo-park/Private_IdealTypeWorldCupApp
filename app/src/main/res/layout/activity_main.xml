@@ -6,7 +6,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/main_background"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/mainTitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="음식 이상형 월드컵"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="#005E88"/>
 
+    <RadioGroup
+        android:id="@+id/round_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/first_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4강"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/second_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8강"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/third_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16강"
+            android:textSize="20sp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/start_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작하기"
+        android:backgroundTint="#005E88"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 </LinearLayout>
