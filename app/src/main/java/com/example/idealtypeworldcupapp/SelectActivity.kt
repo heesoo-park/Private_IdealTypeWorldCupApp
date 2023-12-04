@@ -1,5 +1,6 @@
 package com.example.idealtypeworldcupapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
@@ -24,7 +25,20 @@ class SelectActivity : AppCompatActivity() {
         // viewPager와 fragment를 연결하기 위한 어댑터 설정
         viewPager.adapter = ViewPagerAdapter(this, totalRound)
         // 사용자가 맘대로 슬라이드할 수 없도록 설정
-        viewPager.isUserInputEnabled = true
+        viewPager.isUserInputEnabled = false
+    }
+
+    fun moveToNextMatch() {
+        if (viewPager.currentItem == totalRound - 1) {
+            val intent = Intent(this@SelectActivity, ResultActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            val nextMatch = viewPager.currentItem + 1
+            if (nextMatch < (viewPager.adapter?.itemCount ?: 0)) {
+                viewPager.setCurrentItem(nextMatch, true)
+            }
+        }
     }
 
     fun getTotalRound(): Int {

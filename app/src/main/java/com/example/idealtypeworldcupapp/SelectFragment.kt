@@ -23,7 +23,11 @@ class SelectFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_select, container, false)
+        return inflater.inflate(R.layout.fragment_select, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val roundText: TextView = view.findViewById(R.id.round_text)
         roundText.text = getString(R.string.round, currentRound + 1, (activity as? SelectActivity)?.getTotalRound())
@@ -33,7 +37,13 @@ class SelectFragment : Fragment() {
         leftImg.setImageResource(R.drawable.pasta)
         rightImg.setImageResource(R.drawable.haejangguk)
 
-        return view
+        leftImg.setOnClickListener {
+            (activity as? SelectActivity)?.moveToNextMatch()
+        }
+
+        rightImg.setOnClickListener {
+            (activity as? SelectActivity)?.moveToNextMatch()
+        }
     }
 
     override fun onResume() {
