@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.idealtypeworldcupapp.DataStorage.selectRandomImgs
 import com.example.idealtypeworldcupapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.startBtn.setOnClickListener {
             if (binding.roundRadioGroup.checkedRadioButtonId != -1) {
+                round?.let { info -> selectRandomImgs(info * 2) }
                 val intent = Intent(this@MainActivity, SelectActivity::class.java)
                 intent.putExtra("totalRound", round)
                 startActivity(intent)

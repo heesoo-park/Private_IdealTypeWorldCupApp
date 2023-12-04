@@ -2,12 +2,14 @@ package com.example.idealtypeworldcupapp
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.idealtypeworldcupapp.DataStorage.getImg
 
 class SelectFragment : Fragment() {
     private var currentRound: Int = 0
@@ -34,9 +36,8 @@ class SelectFragment : Fragment() {
 
         val leftImg: ImageView = view.findViewById(R.id.left_img)
         val rightImg: ImageView = view.findViewById(R.id.right_img)
-        leftImg.setImageResource(R.drawable.pasta)
-        rightImg.setImageResource(R.drawable.haejangguk)
-
+        leftImg.setImageResource(getImg(currentRound * 2))
+        rightImg.setImageResource(getImg(currentRound * 2 + 1))
         leftImg.setOnClickListener {
             (activity as? SelectActivity)?.moveToNextMatch()
         }
